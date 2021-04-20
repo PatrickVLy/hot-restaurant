@@ -12,26 +12,11 @@ app.use(express.json());
 
 const reservations = [];
 
-
-// Data
-const table1 = {
-  name: 'Patrick',
-  phone: '123456789',
-  email: 'patrick@email.com',
-  ID: 2000,
-};
-
-const table2 = {
-  name: 'Erick',
-  phone: '555555555',
-  email: 'Erick',
-  ID: 3000
-};
-
 // Routes
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'home.html')));
 app.get('/tables', (req, res) => res.sendFile(path.join(__dirname, 'tables.html')));
 app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.html')));
+
 // API Routes
 app.get('/api/tables', (req, res) => res.json(reservations));
 app.get('/api/tables/:id', (req, res) => {
